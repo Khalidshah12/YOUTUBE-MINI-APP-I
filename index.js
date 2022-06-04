@@ -1,4 +1,4 @@
-let SearchSug = () =>{
+let SearchSug = () => {
     const searchInput = document.querySelector('#searchInput').value;
 
     let key = "AIzaSyA1T0Febk63wR1woeiXCEtdQc2tsQSqI2I"
@@ -9,11 +9,32 @@ let SearchSug = () =>{
         return res.json()
     }).then(function (res) {
         console.log(res)
-
+        displayForSuggestion(res.items)
     }).catch(function (err) {
         console.log(err)
     })
 }
+
+
+let displayForSuggestion = (data) => {
+    let suggestion = document.querySelector("#suggestion")
+    suggestion.innerHTML = null
+    data.forEach(function({snippet: { title} }){
+
+        const sugg = document.createElement('div');
+        sugg.setAttribute("class","sugg")
+
+        const sugTitle = document.createElement('p');
+        sugTitle.setAttribute("id","sugTitle")
+        sugTitle.innerText = title
+
+        sugg.append(sugTitle)
+        suggestion.append(sugg)
+    })
+}
+
+
+
 
 
 let getData = () => {

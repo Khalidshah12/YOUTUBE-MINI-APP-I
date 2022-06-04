@@ -67,10 +67,32 @@ body {
     padding-left: 2px;
 }
 
-/* #suggestion { */
-/* border: 1px solid green; */
-/* height: 100px; */
-/* } */
+#suggestion {
+    width: 100.5%;
+    border: 1px solid green;
+    border-top: none;
+    overflow: scroll;
+    height: 350px;
+    background-color: white;
+    color: red;
+    padding-left: 20px;
+}
+
+#suggestion::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+#suggestion {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+#sugTitle{
+   margin-top: 10px;
+}
 
 #buttonDiv {
     margin-left: -5px;
