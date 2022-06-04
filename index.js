@@ -1,15 +1,19 @@
+let SearchSug = () =>{
+    const searchInput = document.querySelector('#searchInput').value;
 
+    let key = "AIzaSyA1T0Febk63wR1woeiXCEtdQc2tsQSqI2I"
 
-// {/* <iframe width="560" 
-// height="315" 
-// src="https://www.youtube.com/embed/GUdm9n6ikWE" 
-// title="YouTube video player" 
-// frameborder="0" 
-// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-// allowfullscreen>
-// </iframe> */}
+    let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchInput}&key=${key}`
 
+    fetch(url).then(function (res) {
+        return res.json()
+    }).then(function (res) {
+        console.log(res)
 
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
 
 
 let getData = () => {
@@ -31,30 +35,31 @@ let getData = () => {
 
 let display = (data) => {
     // data.forEach(function ({ id: { videoId }, snippet: { title, description } }) {
-        const movielist = document.querySelector('#preview');
-        movielist.innerHTML = ""
-    data.forEach(function(elem){
-        
-        const movieBox = document.createElement('div');
+    const movielist = document.querySelector('#preview');
+    movielist.innerHTML = ""
+    data.forEach(function (elem) {
 
-        const iframe = document.createElement('iframe');
-        iframe.allow = "fullscreen"
-        iframe.src = `https://www.youtube.com/embed/${elem.id.videoId}`
+        const movieBox = document.createElement('div');
+        movieBox.setAttribute("id", "movieBox")
+
+        // const iframe = document.createElement('iframe');
+        // iframe.allow = "fullscreen"
+        // iframe.src = `https://www.youtube.com/embed/${elem.id.videoId}`
 
         const title = document.createElement('h4');
         title.innerText = elem.snippet.title
 
-        // const image = document.createElement('img');
-        // image.src = elem.snippet.thumbnails.medium.url
+        const image = document.createElement('img');
+        image.src = elem.snippet.thumbnails.medium.url
 
-        movieBox.append(iframe,title)
+        movieBox.append(image, title)
         movielist.append(movieBox)
 
         let t = elem.snippet.title
-        let i = elem.id.videoId 
+        let i = elem.id.videoId
         let video = {
-           t,
-           i,
+            t,
+            i,
         }
 
         movieBox.onclick = () => {
@@ -66,7 +71,7 @@ let display = (data) => {
 
 
 let playVideo = (video) => {
-    localStorage.setItem("video",JSON.stringify(video))
+    localStorage.setItem("video", JSON.stringify(video))
 }
 
 

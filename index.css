@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-body{
+body {
     /* height: 2000px; */
     position: relative;
 
@@ -40,7 +40,7 @@ body{
 
 /* #ytIcon {} */
 
-#ytimg{
+#ytimg {
     height: 50px;
     width: 100px;
     cursor: pointer;
@@ -68,19 +68,23 @@ body{
 }
 
 /* #suggestion { */
-    /* border: 1px solid green; */
-    /* height: 100px; */
+/* border: 1px solid green; */
+/* height: 100px; */
 /* } */
 
 #buttonDiv {
     margin-left: -5px;
     height: 54%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
+
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+#buttonDiv>button {
+    background-color: rgb(245, 245, 245);
+    padding: 10px 20px 10px 20px;
     margin-right: 10px;
     border: 1px solid gray;
-    background-color: rgb(245, 245, 245);
     cursor: pointer;
 }
 
@@ -151,76 +155,76 @@ body{
     top: 60px;
 }
 
-.fa-house{
+.fa-house {
     margin-bottom: -10px;
 }
 
-#homeDiv{
+#homeDiv {
     margin-top: 40px;
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.fa-compass{
+.fa-compass {
     margin-bottom: -10px;
 }
 
-#exploreDiv{
+#exploreDiv {
     margin-top: 30px;
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.fa-play{
+.fa-play {
     margin-bottom: -10px;
 }
 
-#shortsDiv{
+#shortsDiv {
     margin-top: 30px;
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.fa-hand-pointer{
+.fa-hand-pointer {
     margin-bottom: -10px;
 }
 
-#subscriptionDiv{
+#subscriptionDiv {
     margin-top: 30px;
     /* margin-left: 20px; */
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.fa-forward{
+.fa-forward {
     margin-bottom: -10px;
 }
 
-#library{
+#library {
     margin-top: 30px;
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-#right-container{
+#right-container {
     /* background-color: white; */
     width: 100%;
-    
+
 }
 
 
 
-#top-suggestion{
+#top-suggestion {
     /* width: 100%; */
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -230,7 +234,7 @@ body{
     margin-left: 100px;
 }
 
-.top-sug-button{
+.top-sug-button {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 30px;
@@ -242,11 +246,11 @@ body{
     background-color: rgb(245, 245, 245);
 }
 
-.top-sug-button:hover{
+.top-sug-button:hover {
     background-color: rgb(199, 196, 196);
 }
 
-#live{
+#live {
     cursor: pointer;
 
 }
@@ -255,24 +259,35 @@ body{
     width: 0 !important
 }
 
-#preview{
-    width: 90%;
-    margin-top: 10px;
-    border: 1px solid black;
+#preview {
+    width: 93%;
+    margin-top: 20px;
     position: absolute;
-    left: 100px;
+    left: 90px;
     overflow: scroll;
-    height: 500px;
+    height: 510px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px 10px;
 }
 
-#preview::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+#preview::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
 }
 
 #preview {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+#movieBox {
+    /* border: 1px solid black; */
+    cursor: pointer;
+}
+
+#movieBox>img {
+    width: 100%;
 }
