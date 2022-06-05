@@ -98,29 +98,25 @@ let getData = () => {
 
 // apending data in container
 let display = (data) => {
-    // data.forEach(function ({ id: { videoId }, snippet: { title, description } }) {
     const preview = document.querySelector('#preview');
     preview.innerHTML = ""
-    data.forEach(function (elem) {
+    data.forEach(function ({ id: { videoId }, snippet: { title, thumbnails: { medium: { url } } } }) {
+        // data.forEach(function (elem) {
 
         const movieBox = document.createElement('div');
         movieBox.setAttribute("id", "movieBox")
 
-        // const iframe = document.createElement('iframe');
-        // iframe.allow = "fullscreen"
-        // iframe.src = `https://www.youtube.com/embed/${elem.id.videoId}`
-
-        const title = document.createElement('h4');
-        title.innerText = elem.snippet.title
+        const titles = document.createElement('h4');
+        titles.innerText = title
 
         const image = document.createElement('img');
-        image.src = elem.snippet.thumbnails.medium.url
+        image.src = url
 
-        movieBox.append(image, title)
+        movieBox.append(image, titles)
         preview.append(movieBox)
 
-        let t = elem.snippet.title
-        let i = elem.id.videoId
+        let t = title
+        let i = videoId
         let video = {
             t,
             i,
@@ -129,7 +125,6 @@ let display = (data) => {
         movieBox.onclick = () => {
             playVideo(video)
         }
-
     })
 }
 
@@ -139,9 +134,9 @@ let playVideo = (video) => {
     window.location.href = "./viewvideo.html"
 }
 
-// function for vertical navbar START
 
-let ytIcon = () =>{
+// function for vertical navbar START
+let ytIcon = () => {
     window.location.href = "./index.html"
 }
 
@@ -172,37 +167,9 @@ let signin = () => {
 // function for vertical navbar END
 
 
-// functions of Search by given buttons
-let all = () =>{
+// functions for Search by given buttons
+let allButton = () => {
     window.location.href = "./index.html"
-}
-
-// for music
-let music = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
-    let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=music&key=${key}`
-    fetch(url).then(function (res) {
-        return res.json()
-    }).then(function (res) {
-        console.log(res)
-        display(res.items)
-    }).catch(function (err) {
-        console.log(err)
-    })
-}
-
-// for tamilCinema
-let tamilCinema = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
-    let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=tamilCinema&key=${key}`
-    fetch(url).then(function (res) {
-        return res.json()
-    }).then(function (res) {
-        console.log(res)
-        display(res.items)
-    }).catch(function (err) {
-        console.log(err)
-    })
 }
 
 // for live
@@ -251,6 +218,33 @@ let bollywoodMusic = () => {
 let comedies = () => {
     let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=comedies&key=${key}`
+    fetch(url).then(function (res) {
+        return res.json()
+    }).then(function (res) {
+        console.log(res)
+        display(res.items)
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+// for tamilCinema
+let tamilCinema = () => {
+    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=tamilCinema&key=${key}`
+    fetch(url).then(function (res) {
+        return res.json()
+    }).then(function (res) {
+        console.log(res)
+        display(res.items)
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+// for music
+let music = () => {
+    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=music&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
     }).then(function (res) {
