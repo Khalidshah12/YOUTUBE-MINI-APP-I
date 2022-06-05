@@ -75,7 +75,6 @@ body {
     height: 350px;
     background-color: white;
     color: red;
-    padding-left: 20px;
 }
 
 #suggestion::-webkit-scrollbar {
@@ -90,14 +89,18 @@ body {
     /* Firefox */
 }
 
-#sugTitle{
-   margin-top: 10px;
+.sugg {
+    cursor: pointer;
+}
+
+#sugTitle {
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 #buttonDiv {
     margin-left: -5px;
     height: 54%;
-
     background-color: rgb(245, 245, 245);
     cursor: pointer;
 }
@@ -284,10 +287,10 @@ body {
 #preview {
     width: 93%;
     margin-top: 20px;
-    position: absolute;
-    left: 90px;
+    /* position: absolute; */
+    margin-left: 90px;
     overflow: scroll;
-    height: 510px;
+    height: 480px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px 10px;
