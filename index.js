@@ -2,7 +2,7 @@
 let SearchSug = () => {
     const searchInput = document.querySelector('#searchInput').value;
 
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
 
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchInput}&key=${key}`
     if (searchInput != "") {
@@ -38,7 +38,7 @@ let displayForSuggestion = (data) => {
     let suggestion = document.createElement("div")
     suggestion.setAttribute("id", "suggestion")
     suggestion.innerHTML = null
-    data.forEach(function (elem) {
+    data.forEach(function ({snippet:{title}}) {
 
         const sugg = document.createElement('div');
         sugg.setAttribute("class", "sugg")
@@ -49,7 +49,7 @@ let displayForSuggestion = (data) => {
 
         const sugTitle = document.createElement('p');
         sugTitle.setAttribute("id", "sugTitle")
-        sugTitle.innerText = elem.snippet.title
+        sugTitle.innerText = title
 
         sugg.append(sugTitle)
         suggestion.append(sugg)
@@ -82,7 +82,7 @@ document.addEventListener('mouseup', function (e) {
 let getData = () => {
     const searchInput = document.querySelector('#searchInput').value;
 
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
 
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchInput}&key=${key}`
 
@@ -174,7 +174,7 @@ let allButton = () => {
 
 // for live
 let live = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=live&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -188,7 +188,7 @@ let live = () => {
 
 // for playlists
 let playlists = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=playlists&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -202,7 +202,7 @@ let playlists = () => {
 
 // for bollywoodMusic
 let bollywoodMusic = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=bollywoodMusic&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -216,7 +216,7 @@ let bollywoodMusic = () => {
 
 // for comedies
 let comedies = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=comedies&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -230,7 +230,7 @@ let comedies = () => {
 
 // for tamilCinema
 let tamilCinema = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=tamilCinema&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -243,7 +243,7 @@ let tamilCinema = () => {
 }
 // for music
 let music = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=music&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -257,7 +257,7 @@ let music = () => {
 
 // for t_sereis
 let t_sereis = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=t_sereis&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -271,7 +271,7 @@ let t_sereis = () => {
 
 // for gaming
 let gaming = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=gaming&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -285,7 +285,7 @@ let gaming = () => {
 
 // for javaScript
 let javaScript = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=javaScript&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
@@ -299,7 +299,7 @@ let javaScript = () => {
 
 // for trailers
 let trailers = () => {
-    let key = "AIzaSyD3VaUU63wASH1YmJJw0IORvHDmsOTTSxA"
+    let key = "AIzaSyBS-B6Z9MqL8ikhyfGI3EwqKtnnrAd1blI"
     let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=trailers&key=${key}`
     fetch(url).then(function (res) {
         return res.json()
